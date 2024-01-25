@@ -1,12 +1,17 @@
-import "./NavBar.css"
+import {useContext} from "react";
+
+import {CartContext} from "../../context/CartContext";
+import {Link} from "react-router-dom";
 
 const CartWidget = () => {
-  return (
-    <div id="cartwidget">
-      <img src="/img/cart3.png" alt="carro de compras"/>
-      <p>3</p>
-    </div>
-  )
-}
+  const { carrito, totalCantidad } = useContext(CartContext);
 
-export default CartWidget
+  return (
+    <Link to="/carrito" id="cartwidget">
+      <img src="/img/cart3.png" alt="carro de compras" />
+      {carrito.length !== 0 && <p>{totalCantidad()}</p>}
+    </Link>
+  );
+};
+
+export default CartWidget;

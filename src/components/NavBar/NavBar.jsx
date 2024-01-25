@@ -1,16 +1,23 @@
-import CartWidget from "./CartWidget"
+import CartWidget from "./CartWidget";
+import {Link} from "react-router-dom";
+
+import "./NavBar.css";
 
 const NavBar = () => {
   return (
     <div id="navbar">
+      <Link to="/">
         <div className="brand">
-            <p>digitalSpawn</p>
+            <p>digital$pawn</p>
         </div>
+      </Link>
         <ul>
-            <li><a href="#">Empeñar</a></li>
-            <li><a href="#">Vender</a></li>
-            <li><a href="#">Comprar</a></li>
-            <li><a href="#">Ofertas Semanales</a></li>
+            <li>
+            <Link to="/categorias/productos">ÚLTIMOS INGRESOS</Link>
+            </li>
+            <li>
+            <Link to="/categorias/ofertas">OFERTAS DE LA SEMANA</Link>
+            </li>
         </ul>
         <CartWidget/>
     </div>
@@ -19,3 +26,5 @@ const NavBar = () => {
 }
 
 export default NavBar
+
+
